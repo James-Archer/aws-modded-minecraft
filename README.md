@@ -1,4 +1,4 @@
-# aws-modded-minecraft
+# aws-modded-minecraft (Under construction)
 Code and instructions for setting up a modded Minecraft server on AWS, and some tools for server maintenance. This takes advantage of some of the AWS free-tier features, but the EC2 instance will not be free because of the RAM requirements.
 
 # Introduction
