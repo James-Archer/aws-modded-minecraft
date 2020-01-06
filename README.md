@@ -3,7 +3,7 @@ Code and instructions for setting up a modded Minecraft server on AWS, and some 
 
 # Introduction
 
-The guide here will cover things in as much detail as I will need to repeat this in the future. Hopefully it'll be pretty thorough, and I’ll try to explain things here as necessary.
+The guide here will cover things in as much detail as I will need to repeat this in the future. Hopefully it'll be pretty thorough, and I’ll try to explain things here as necessary. I put this together because I couldn't find anything that was both complete in the features I wanted, and didn't have a whole lot of assumed knowledge. *Disclaimer*: most of the stuff here I learned as I did it so I'm sure there are better ways to do things, and there's all sorts of nonsense in here, but this works for me and that's my standard for this.
 
 The features of this project are:
 * A Forge modded Minecraft server.
@@ -31,7 +31,7 @@ I’ll summarise it here, and include any changes I made and why.
 ### Set up S3 bucket
 ### Create IAM roles
 ### Create EC2 instance
-###Verify it all works
+### Verify it all works
 ### Optional: static IP
 ### A note about copying an existing world in
 ## Lambda functions
