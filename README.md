@@ -62,7 +62,7 @@ npm install
 While the packages install, add your own stuff to the website. Edit /web-app/src/App.js and change the following:
 * 7: Your Lambda API endpoint here\*.
 * 8: Your other Lambda endpoint here\*.
-* 41: The name of the server that matches the format above under [Activating servers]( https://github.com/James-Archer/aws-modded-minecraft/blob/master/README.md#activating-servers). 
+* 41: The name of the server that matches the format above under [Activating servers](https://github.com/James-Archer/aws-modded-minecraft/blob/master/README.md#activating-servers-start-minecraft-server). 
 * 52: As above.
 * 146: The name of your server to be displayed. Doesn’t have to match above. Purely flavour.
 * 162: Can add whatever text you want here. 
