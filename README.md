@@ -31,7 +31,7 @@ I’ll summarise it here, and include any changes I made and why.
 ### Set up S3 bucket
 ### Create IAM roles
 ### Create EC2 instance
-The assumed name of the EC2 instance is Minecraft-server-<SERVER-NAME>, so that the Lambda functions can identify it by the name. I could use the InstanceID but if I have to create a new instance for whatever reason, this way is easier.
+The assumed name of the EC2 instance is Minecraft-server-\<SERVER-NAME\>, so that the Lambda functions can identify it by the name. I could use the InstanceID but if I have to create a new instance for whatever reason, this way is easier.
 ### Verify it all works
 ### Optional: static IP
 ### A note about copying an existing world in
@@ -70,10 +70,14 @@ While the packages install, add your own stuff to the website. Edit /web-app/src
 \*To get the API endpoint address, find them in your Lambda functions: click on the “API Gateway” in the Designer section, and copy the “API Endpoint” address.
 
 If you want to change and style stuff, go to town in App.css, and if you don’t like the egg then swap out logo.svg. Might work with non-SVG images, might not. That’s your problem.
+
+Test the website by running `yarn start` and once it’s to your liking, build the server with `yarn build`. This will create a “build” directory in the web-app folder and compile the website and all required files into it.
+### Host on S3
+I followed this guide for [deploying a react app to S3](https://www.newline.co/fullstack-react/articles/deploying-a-react-app-to-s3/) so I recommend you do too. If you want your own domain name for the website, there’s specific instructions for that, otherwise the URL will be of the form \<bucket-name\>.s3-website.\<bucket-region\>.amazonaws.com. Not super memorable but free so just bookmark it and you’ll be fine.
 ### Changes for single/multi server
-To run multiple servers, repeat the process for creating the S3 buckets and EC2 instances for each server, making sure the names (EC2 instance Tag: Name) follow the template “Minecraft-server-<UNIQUE-NAME>”. Simply add the server name to the `servers` list in the `status-minecraft-server` function and adding the name and password to `start-minecraft-server` function. This way you can have a unique password for each server if you wish. The former is a Python `list` and the latter is a `dictionary` so look those up if you don’t know how they work.
+To run multiple servers, repeat the process for creating the S3 buckets and EC2 instances for each server, making sure the names (EC2 instance Tag: Name) follow the template “Minecraft-server-\<UNIQUE-NAME\>”. Simply add the server name to the `servers` list in the `status-minecraft-server` function and adding the name and password to `start-minecraft-server` function. This way you can have a unique password for each server if you wish. The former is a Python `list` and the latter is a `dictionary` so look those up if you don’t know how they work.
 
 To change the server, see [my website code here with two servers running.]( https://github.com/James-Archer/mc-server-manager-website/tree/bbed935b533e3c4601fbd2e48c6fc92848110cdd) Note that the commit linked here is what the template in this tutorial uses. Feel free to check the latest version but I have no idea what it’ll look like. 
 
 My implementation for two servers is to copy  a bunch of functions and hard code it all in. I’m sure there’s a better way of scaling it but it took me half an hour and it works for me so if you have a better, scalable solution feel free to make a PR. 
-### Host on S3
+
