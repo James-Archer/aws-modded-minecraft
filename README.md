@@ -9,7 +9,7 @@ The features of this project are:
 * A Forge modded Minecraft server.
 * Automatic backups as regular as you would like.
 * Automatic server shutdown and backup when no players are online.
-* A (scalable) website where players can boot the server (or any number of servers) up (password protected) when they want to play.
+* A (scalable) website where players can boot the server (or any number of servers) up (password protected) when they want to play. [The code for this is hosted here!](https://github.com/James-Archer/mc-server-manager-website-template)
 This is all to minimise the costs of leaving the server running 24/7, and reduce the maintenance required by the server maintainer.
 
 ## AWS services used
