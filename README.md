@@ -34,6 +34,7 @@ I’ll summarise it here, and include any changes I made and why.
 The assumed name of the EC2 instance is Minecraft-server-\<SERVER-NAME\>, so that the Lambda functions can identify it by the name. I could use the InstanceID but if I have to create a new instance for whatever reason, this way is easier.
 ### Verify it all works
 ### Optional: static IP
+Highly recommended so users won't have to put in a new IP every time the server boots. Use an Elastic IP in EC2 and assign it to the isntance. This will cost a bit more though. 
 ### A note about copying an existing world in
 ## Lambda functions
 I have two separate Lambda functions here, but you could put them into the same one and set up the API a bit better. Both Lambdas are running the default Python 3.8 runtime. It'll probably work with others (except 2.7 because c'mon it's 2020, people) but I haven't verified it.
